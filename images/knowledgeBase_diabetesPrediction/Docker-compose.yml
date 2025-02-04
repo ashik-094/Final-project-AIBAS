@@ -1,0 +1,14 @@
+services:
+  learning_base:
+    build: .
+    image: ashikzaman43/knowledgebase_diabetesprediction
+    volumes:
+       - ai_system:/tmp
+    command:
+    - sh
+    - "-c"
+    - |
+      rm -rf /tmp/knowledgeBase/ && cp -r /knowledgeBase/ /tmp/;
+volumes:
+  ai_system:
+    external: true
