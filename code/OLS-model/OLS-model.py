@@ -14,7 +14,7 @@ def load_ols_model_from_xml(xml_path):
     """
     Loads an OLS model's parameters from an XML file and returns a statsmodels OLS object.
     """
-    # Parse the XML file
+    # Parse the XML 
     tree = ET.parse(xml_path)
     root = tree.getroot()
 
