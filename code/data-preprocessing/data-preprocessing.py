@@ -35,7 +35,7 @@ plt.savefig(output_file)
 plt.show()
 
 # Drop specified columns
-data1 = data.drop(columns=['CholCheck', 'Fruits', 'Veggies', 'NoDocbcCost', 'MentHlth', 'CholCheck', 'Smoker'])
+data = data.drop(columns=['CholCheck', 'Fruits', 'Veggies', 'NoDocbcCost', 'MentHlth', 'CholCheck', 'Smoker'])
 
 # List of skewed features to transform
 skewed_features = ['BMI', 'PhysHlth']

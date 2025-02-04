@@ -1,2 +1,2 @@
-HighBP,HighChol,CholCheck,BMI,Smoker,Stroke,HeartDiseaseorAttack,PhysActivity,Fruits,Veggies,HvyAlcoholConsump,AnyHealthcare,NoDocbcCost,GenHlth,MentHlth,PhysHlth,DiffWalk,Sex,Age,Education,Income,Diabetes
-1.0,0.0,1.0,3.713572066704308,0.0,0.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,4.0,0.0,0.0,0.0,1.0,9.0,5.0,5.0,1.0
+HighBP,HighChol,BMI,Stroke,HeartDiseaseorAttack,PhysActivity,HvyAlcoholConsump,AnyHealthcare,GenHlth,PhysHlth,DiffWalk,Sex,Age,Education,Income,Diabetes
+1.0,0.0,3.713572066704308,0.0,0.0,1.0,0.0,1.0,4.0,0.0,0.0,1.0,9.0,5.0,5.0,1.0
