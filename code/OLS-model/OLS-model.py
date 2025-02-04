@@ -76,7 +76,9 @@ def apply_ols_solution():
 
     # Rebuild the OLS model using statsmodels with the parameters loaded from XML
     # Since we only have parameters in ols_model, we need to use statsmodels to apply them.
-    ols_model_fitted = sm.OLS(y_test, x_test).fit()  # Fit the model using the data
+    ols_model_fitted = sm.OLS(y_test, x_test).fit()  
+    
+    # Fit the model using the data
 
     # Predict on the test data using the fitted ols_model
     y_pred = ols_model_fitted.predict(x_test)
