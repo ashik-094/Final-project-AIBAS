@@ -1,0 +1,26 @@
+
+services:
+  learning_base_test:
+    image: ashikzaman43/learningbase_diabetesprediction
+    volumes:
+      - ai_system:/tmp
+    command: sh -c "rm -rf /tmp/test/learningBase && mkdir -p /tmp/test/learningBase && cp -r /learningBase/ /tmp/test/"
+
+  code_base_test:
+    image: ashikzaman43/codebase_diabetesprediction
+    volumes:
+      - ai_system:/tmp
+    depends_on:
+      - knowledge_base_test
+      - learning_base_test
+    command: sh -c "rm -rf /tmp/test/codeBase && mkdir -p /tmp/test/codeBase && cp -r /codeBase/ /tmp/test/codeBase && python3 /tmp/test/codeBase/codeBase/create_ANN.py test reciever"
+
+  knowledge_base_test:
+    image: ashikzaman43/knowledgebase_diabetesprediction
+    volumes:
+      - ai_system:/tmp
+    command: sh -c "rm -rf /tmp/test/knowledgeBase && mkdir -p /tmp/test/knowledgeBase && cp -r /knowledgeBase/ /tmp/test/"
+
+volumes:
+  ai_system:
+    external: true

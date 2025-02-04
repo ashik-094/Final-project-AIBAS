@@ -1,0 +1,26 @@
+
+services:
+  activation_base_test:
+    image: ashikzaman43/activationbase_diabetesprediction
+    volumes:
+      - ai_system:/tmp
+    command: sh -c "rm -rf /tmp/test/activationBase && mkdir -p /tmp/test/activationBase && cp -r /activationBase/ /tmp/test/"
+
+  code_base_test:
+    image: ashikzaman43/codebase_diabetesprediction
+    volumes:
+      - ai_system:/tmp
+    depends_on:
+      - knowledge_base_test
+      - activation_base_test
+    command: sh -c "rm -rf /tmp/test/codeBase && mkdir -p /tmp/test/codeBase && cp -r /codeBase/ /tmp/test/codeBase && python3 /tmp/test/codeBase/codeBase/OLS-model.py test reciever"
+
+  knowledge_base_test:
+    image: ashikzaman43/knowledgebase_diabetesprediction
+    volumes:
+      - ai_system:/tmp
+    command: sh -c "rm -rf /tmp/test/knowledgeBase && mkdir -p /tmp/test/knowledgeBase && cp -r /knowledgeBase/ /tmp/test/"
+
+volumes:
+  ai_system:
+    external: true
