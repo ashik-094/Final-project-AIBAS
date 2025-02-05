@@ -75,10 +75,7 @@ def apply_ols_solution():
     print(f"x_test shape after adding constant: {x_test.shape}")
 
     # Rebuild the OLS model using statsmodels with the parameters loaded from XML
-    # Since we only have parameters in ols_model, we need to use statsmodels to apply them.
     ols_model_fitted = sm.OLS(y_test, x_test).fit()  
-    
-    # Fit the model using the data
 
     # Predict on the test data using the fitted ols_model
     y_pred = ols_model_fitted.predict(x_test)
@@ -88,43 +85,22 @@ def apply_ols_solution():
     print(f"First 10 predictions: {y_pred[:10]}")
     print(f"Ground truth (first 10): {y_test[:10].values}")
 
-    # Calculate performance metrics
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-
     end = timeit.default_timer()
     print(f"Raw predictions: {y_pred[:10]}")
     print(f"Binary predictions: {y_pred_binary[:10]}")
     print(f"Ground truth: {y_test[:10].values}")
-
-    print(f"Mean Squared Error: {mse}")
-    print(f"R-squared: {r2}")
     print("...solution has been applied successfully!")
     print("...time elapsed: " + str(round(end - start, 2)) + "s for predictions")
 
-    # Store application results at the standard path of activationBase
+        # Store application results at the standard path of activationBase
     with open(path_activation_base + 'currentApplicationResults.txt', 'w') as f:
-        f.write(f'Raw predictions: {y_pred}\n')
-        f.write(f'Binary predictions: {y_pred_binary}\n')
-        f.write(f'Actual class: {y_test.values}\n')
+        f.write(f"Start Time: {start:.2f} seconds\n")
+        f.write(f"End Time: {end:.2f} seconds\n")
+        f.write(f"Total Time Elapsed: {round(end - start, 2)} seconds\n\n")
+        f.write(f"Raw predictions: {y_pred.tolist()}\n")
+        f.write(f"Binary predictions: {y_pred_binary.tolist()}\n")
+        f.write(f"Actual class: {y_test.values.tolist()}\n")
     return
-
-
-def save_ols_model_as_xml(model, xml_path):
-    """
-    Saves the parameters of a trained OLS model as an XML file.
-    """
-    root = ET.Element("OLSModel")
-    params = ET.SubElement(root, "Parameters")
-
-    for param, value in model.params.items():
-        param_element = ET.SubElement(params, "Parameter", name=param)
-        param_element.text = str(value)
-
-    tree = ET.ElementTree(root)
-    tree.write(xml_path)
-    print("...OLS model saved as XML successfully!")
-
 
 def main() -> int:
     """

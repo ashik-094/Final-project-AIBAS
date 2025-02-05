@@ -4,6 +4,7 @@ services:
     image: ashikzaman43/learningbase_diabetesprediction
     volumes:
       - ai_system:/tmp
+      - ./documentation:/documentation  # Mount local folder
     command: sh -c "rm -rf /tmp/test/learningBase && mkdir -p /tmp/test/learningBase && cp -r /learningBase/ /tmp/test/"
 
   code_base_test:
