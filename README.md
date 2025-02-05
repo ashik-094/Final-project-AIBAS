@@ -54,12 +54,42 @@ By following these steps, you can efficiently manage the workflow and ensure tha
 
 Build the Docker images using specific Dockerfiles:
 
-```bash
+```
 docker build -f images/codeBase_diabetesPrediction/Dockerfile -t ashikzaman43/codebase_diabetesprediction:latest .
+```
+### Do the above for all the images
 
-# Do the above for all the images
+## Step 3: Push Docker Images to Docker Hub
 
+Push the Docker images to Docker Hub:
+```
+docker push ashikzaman43/learningbase_diabetesprediction:latest
+```
+### Do this for all the images
 
+## Step 4: Run Docker Compose
+
+From the scenario folder, run the Docker Compose file:
+
+```
+docker-compose -f docker-compose-ai.yml up
+```
+
+### Do this for other .yml files
+
+## Step 5: Outcome Storage
+The outcome will be stored in the volume as .txt, .xml, .png, .pdf, or .csv files.
+
+### Step 6: Move Files from Volume to Local Machine
+Move the files from the volume to your local machine:
+
+```
+docker cp <container_name_or_id>:<source_path_inside_container> <destination_path_on_host>
+```
+#### Example
+```
+docker cp scenarios-code_base_test-1:tmp/test/learningBase "F:/AIBAS/Final project/Final-project-AIBAS/documentation/"
+```
 
 
 
