@@ -50,4 +50,15 @@ This section outlines the steps involved in running our code, from creating volu
 By following these steps, you can efficiently manage the workflow and ensure that the data is processed and stored correctly.
 
 
+## Step 2: Build Docker Images
+
+Build the Docker images using specific Dockerfiles:
+
+```bash
+docker build -f images/codeBase_diabetesPrediction/Dockerfile -t ashikzaman43/codebase_diabetesprediction:latest .
+# Do the above for all the images
+
+
+
+
 
