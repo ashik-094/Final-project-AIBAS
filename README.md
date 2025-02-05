@@ -31,7 +31,7 @@ Some of the key features in this dataset include:
 - **Veggies:** Consumption frequency of vegetables.
 - **HeavyAlcoholConsumption:** Indicates heavy drinking.
 - **NoDocbcCost:** Indicates if there were any times a person needed to see a doctor but could not because of cost.
-- **Diabetes_012:** This is the target variable. It indicates no diabetes (0), prediabetes (1), and diabetes (2).
+- **Diabetes_012:** This is the target variable. It indicates no diabetes (0), prediabetes (1), and diabetes (2). (We work only with diabetes and no diabetes)
 
 ### Utility
 
