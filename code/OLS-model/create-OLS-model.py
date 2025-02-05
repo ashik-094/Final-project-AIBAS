@@ -108,6 +108,7 @@ def main():
     output_dir_model = "/tmp/" + sender + "/knowledgeBase"
     training_data_path = "/tmp/" + sender + "/learningBase/train/training_data.csv"
     test_data_path = "/tmp/" + sender + "/learningBase/validation/test_data.csv"
+    model_summary_path = os.path.join(output_dir, "model_summary.txt")
     
     os.makedirs(output_dir, exist_ok=True)
     
@@ -119,8 +120,15 @@ def main():
     
     save_model_as_xml(model, os.path.join(output_dir_model, 'currentOlsSolution.xml'))
     save_performance_metrics(metrics, os.path.join(output_dir, 'performance_metrics.txt'))
-    plot_training_performance(model, x_train, y_train, x_test, y_test, model.predict(sm.add_constant(x_test)), output_dir)
-    
+    #plot_training_performance(model, x_train, y_train, x_test, y_test, model.predict(sm.add_constant(x_test)), output_dir)
+
+    # Save the model summary to a text file
+    with open(model_summary_path, "w") as f:
+        f.write(model.summary().as_text())
+
+    # Print the model summary in the console
+    print(model.summary())
+
     return 0
 
 if __name__ == '__main__':
