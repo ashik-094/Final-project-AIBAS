@@ -23,10 +23,7 @@ Some of the key features in this dataset include:
 
 - **Smoking:** Indicates whether the individual currently smokes.
 - **PhysicalActivity:** Indicates whether the individual engages in physical activity.
-- **Fruits:** Consumption frequency of fruits.
-- **Veggies:** Consumption frequency of vegetables.
 - **HeavyAlcoholConsumption:** Indicates heavy drinking.
-- **NoDocbcCost:** Indicates if there were any times a person needed to see a doctor but could not because of cost.
 - **Diabetes_012:** This is the target variable. It indicates no diabetes (0), prediabetes (1), and diabetes (2). (We work only with diabetes and no diabetes)
 
 ### Utility
@@ -90,6 +87,15 @@ docker cp <container_name_or_id>:<source_path_inside_container> <destination_pat
 ```
 docker cp scenarios-code_base_test-1:tmp/test/learningBase "F:/AIBAS/Final project/Final-project-AIBAS/documentation/"
 ```
+
+
+
+### Docker Images
+
+If you want to see the Docker images for this project, please visit my DockerHub repository at the following link:
+
+(https://hub.docker.com/repositories/ashikzaman43)
+
 
 
 
