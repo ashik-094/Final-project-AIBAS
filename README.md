@@ -15,6 +15,29 @@ any kind of platform (tested with `aarch64`, `x86_64` and `x86_64_gpu`).
 
 The tool was originally developed by Dr.-Ing. Marcus Grum.
 
+
+
+## Dataset Overview
+
+This dataset is compiled and shared by a user on Kaggle and is based on the Behavioral Risk Factor Surveillance System (BRFSS) data from the Centers for Disease Control and Prevention (CDC). BRFSS is a United States health-related telephone survey that collects state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.
+
+### Key Features
+
+Some of the key features in this dataset include:
+
+- **Smoking:** Indicates whether the individual currently smokes.
+- **PhysicalActivity:** Indicates whether the individual engages in physical activity.
+- **Fruits:** Consumption frequency of fruits.
+- **Veggies:** Consumption frequency of vegetables.
+- **HeavyAlcoholConsumption:** Indicates heavy drinking.
+- **NoDocbcCost:** Indicates if there were any times a person needed to see a doctor but could not because of cost.
+- **Diabetes_012:** This is the target variable. It indicates no diabetes (0), prediabetes (1), and diabetes (2).
+
+### Utility
+
+This dataset is primarily used for statistical analysis and machine learning models to understand and predict diabetes based on various health indicators. It's ideal for tasks such as classification, where the aim is to predict the likelihood of diabetes based on the health indicators.
+
+
 ## Getting Started
 
 ### 1) Set up operating system
