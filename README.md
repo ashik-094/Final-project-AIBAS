@@ -23,10 +23,8 @@ Some of the key features in this dataset include:
 
 - **Smoking:** Indicates whether the individual currently smokes.
 - **PhysicalActivity:** Indicates whether the individual engages in physical activity.
-- **Fruits:** Consumption frequency of fruits.
-- **Veggies:** Consumption frequency of vegetables.
 - **HeavyAlcoholConsumption:** Indicates heavy drinking.
-- **NoDocbcCost:** Indicates if there were any times a person needed to see a doctor but could not because of cost.
+
 - **Diabetes_012:** This is the target variable. It indicates no diabetes (0), prediabetes (1), and diabetes (2). (We work only with diabetes and no diabetes)
 
 ### Utility
@@ -36,146 +34,36 @@ This dataset is primarily used for statistical analysis and machine learning mod
 
 ## Getting Started
 
-### 1) Set up operating system
+#### 1) Set up Docker on Windows
+This is based on the Docker Installation Guide for Windows.
 
-#### 1.1) Set up OS at raspberry
-
-##### Set up OS at raspberry via terminal
-
-1. Download and install recent OS, e.g. `raspberry Pi OS Lite buster 12.02.2020`, on sd card via laptop.
-
-1. Create ssh file an boot section.
-
-1. Configure WLAN information.
-
-1. Put SD card into raspberry and start device.
-
-##### Alternatively, set up device via Raspberry Pi Imager
-
-1. Download and install Raspberry Pi Imager (e.g. v1.7.2) from [Raspberry Pi OS Page](https://www.raspberrypi.com/software/).
-
-1. Configure your device by selecting `raspberry Pi OS Lite (64bit)`, SD card and corresponding settings.
-
-1. Hit `write os`.
-
-1. Put SD card into raspberry and start device.
-
-##### Log in to your raspberry
-
-1. Change default password.
-
-    ```
-    sudo passwd pi
-    ```
-
-1. Connect on your raspberry via shell with user `pi`, e.g. with password `raspberry`:
-
-    ```
-    ssh pi@141.89.39.173
-    ```
-
-    or by
-
-    ```
-    ssh pi@AiLabraspberry1.local
-    ```
-
-1. Test your current distro by `lsb_release -a`.
-
-1. Test your architecture by `uname -a`.
-
-#### 1.2) Set up any kind of linux-based system
-
-Please follow installation details of [AiLab Installation Guide](https://github.com/MarcusGrum/AI-Lab).
-This shows the installation of numerous of the required tools.
-Hence, the following just shows a raspberry focus and some extra commands.
-
-### 2) Set up docker
-
-#### 2.1) Set up docker at raspberry
-
-This is based on the [Docker Installation Guide](https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo).
-
-1. Update your os and accept its 'Suite' value from 'testing' to 'oldstable' explicitly before updates for this repository can be applied.
-
-    ```
-    sudo apt-get update
-    ```
-
-1. Upgrade your os.
-
-    ```
-    sudo apt-get upgrade
-    ```
-
-1. Install docker
-
-    ```
-    curl -sSL https://get.docker.com | sh
-    ```
-
-1. Add a non-root user to the docker group.
-
-    ```
-    sudo usermod -aG docker ${USER}
-    ```
-
-1. Prepare installation of Docker-Compose.
-
-    ```
-    sudo apt-get install libffi-dev libssl-dev
-    sudo apt install python3-dev
-    sudo apt-get install -y python3 python3-pip
-    ```
-
-1. Install Docker-Compose.
-
-    ```
-    sudo pip3 install docker-compose
-    ```
-
-1. Enable the Docker system service to start your containers on boot.
-
-    ```
-    sudo systemctl enable docker
-    ```
-
-1. Restart your device.
-
-    ```
-    sudo reboot
-    ```
-
-1. Run Hello World Container for testing Docker installation.
+1) Download and Install Docker Desktop
+    Download the latest Docker Desktop for Windows from the official Docker website.
+    Run the installer and follow the installation instructions.
+    Ensure WSL 2 (Windows Subsystem for Linux) is enabled when prompted.
+2) Verify Docker Installation
+    Run the following command in PowerShell or Command Prompt:
 
     ```
     docker run hello-world
     ```
 
-1. Create docker volume `ai_system` for using mechanisms of this repository:
+This will confirm that Docker is installed and working correctly.
 
-	```
-	docker volume create ai_system
-	```
-
-#### 2.2) Set up docker at mac
-
-This is based on the [Docker Installation Guide](https://docs.docker.com/desktop/mac/install/).
-
-1. Download recent `.dmg` file called `Docker Desktop for Mac` and install it.
-
-1. Run Hello World Container for testing Docker installation.
-
+3) Enable Docker to Start on Boot
+    Open Docker Desktop.
+    Go to Settings → General.
+    Check "Start Docker Desktop when you log in".
+4) Create a Docker Volume
+To create the ai_system volume for persistent storage, run:
     ```
-    docker run hello-world
+    docker volume create ai_system
     ```
-
-1. Create docker volume `ai_system` for using mechanisms of this repository:
-
-	```
-	docker volume create ai_system
-	```
-
+5) Run Docker Containers Using WSL 2 (Optional)
+If you use WSL 2, ensure it’s set as the default backend by running:
+    ```
+    wsl --set-default-version 2
+    ```
 ### 3) Set up tensorflow
 
 #### 3.1) Set up tensorflow at raspberry
