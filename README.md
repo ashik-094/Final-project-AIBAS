@@ -48,3 +48,18 @@ This section outlines the steps involved in running our code, from creating volu
 6. **Transfer Files**: Finally, move the files from the volume to your local machine for further analysis or use.
 
 By following these steps, you can efficiently manage the workflow and ensure that the data is processed and stored correctly.
+
+1. Build docker image from Dockerfile specified.
+
+```bash
+docker build --tag ashikzaman43/learningbase_diabetesprediction:latest .
+
+The following is the latest:
+
+docker build -f images/codeBase_diabetesPrediction/Dockerfile -t ashikzaman43/codebase_diabetesprediction:latest .
+
+(PowerShell in F:\AIBAS\Project AIBAS)
+
+PS F:\AIBAS\Project AIBAS> docker build -f images/codeBase_diabetesPrediction/Dockerfile -t ashikzaman43/codebase_diabetesprediction:latest .
+
+
