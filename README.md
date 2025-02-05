@@ -55,7 +55,8 @@ By following these steps, you can efficiently manage the workflow and ensure tha
 Build the Docker images using specific Dockerfiles:
 
 ```bash
-docker build -f images/codeBase_diabetesPrediction/Dockerfile -t ashikzaman43/codebase_diabetesprediction:latest .
+docker build -f images/codeBase_diabetesPrediction/Dockerfile -t ashikzaman43/codebase_diabetesprediction:latest . ```
+
 # Do the above for all the images
 
 
