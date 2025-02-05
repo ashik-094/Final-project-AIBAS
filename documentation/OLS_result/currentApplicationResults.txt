@@ -1,0 +1,7 @@
+Start Time: 16207.61 seconds
+End Time: 16207.66 seconds
+Total Time Elapsed: 0.05 seconds
+
+Raw predictions: [0.9999999999999998]
+Binary predictions: [1]
+Actual class: [1.0]
