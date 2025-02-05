@@ -1,20 +1,16 @@
 # Welcome to the Project AI-Powered Diabetes Prediction
 
-The AI-CPS is an end-to-end open source platform for cyber-physical systems considering a knowledge base with the aid of artificial neuronal networks (ANN). 
-It has a comprehensive, flexible ecosystem of tools, libraries, and community resources that lets researchers push the state-of-the-art in ANN and developers easily build and deploy ANN-powered applications. 
-Its particular focus lays on the efficient application of knowledge of ANN.
-For this, it enables the flexible, node-independent (a) situational `ANN application`, (b) `ANN training and validation` as well as (c) `ANN refinement`,
-which is realized as Over-The-Air deployment of 
-(1) ANN models considered as `knowledge base`,
-(2) ANN activations considered as `activation base`,
-(3) ANN training material considered as `learning base` and
-(4) ANN routines considered as `codeBase`.
-Among furthers, this is realized on behalf of `tensor_flow` libraries, `docker` mechanisms, `python` applications,
-so that they can be realized on any kind of device (tested with `raspberry`, `mac`, `ubuntu`),
-any kind of platform (tested with `aarch64`, `x86_64` and `x86_64_gpu`).
+## Project Overview
 
-The tool was originally developed by Dr.-Ing. Marcus Grum.
+Our project focuses on predicting diabetes using artificial neural networks (ANN). Diabetes is a chronic condition that affects the body's ability to regulate blood glucose, significantly impacting quality of life and life expectancy.
 
+### Data Acquisition and Preprocessing
+
+We utilized a large dataset from Kaggle, accessed via the Kaggle API key, which featured labeled data in three classes. For our purposes, we refined the dataset to focus on two classes—diabetic and non-diabetic. We opted to manually select features to drop rather than using automated feature selection techniques. Due to notable outliers in BMI and physical health status indicators, we applied log transformations to normalize the data, which enhances model accuracy. All data was standardized prior to training.
+
+### Model Architecture
+
+We designed a binary classification model using Keras's Sequential API. Our model consists of a three-layer feedforward neural network, employing ReLU activation functions in the hidden layers and a Sigmoid output layer. The model is optimized using the Adam optimizer and trained with binary cross-entropy loss to effectively predict diabetic and non-diabetic classes.
 
 
 ## Dataset Overview
